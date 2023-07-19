@@ -35,3 +35,19 @@ docker pull 15819588170/cesium-offline-server
 ```
 docker run --name cesium-offline-server  -p 3000:3000 -p 443:443 -v D:/xxx/map:/usr/local/home/sqltie/map -v D:/xxx/terrain:/usr/local/home/sqltie/terrain -v D:/xxx/tileset:/usr/local/home/sqltie/tileset -v D:/code/CeisumOfflineServer/tile:/usr/local/home/tile  -itd 15819588170/cesium-offline-server:latest
 ```
+
+## docker 主要参数
+
+### 宿主机端口映射
+
+#### -p xxx:3000 http 端口
+
+#### -p xxx:443 https 端口
+
+### 宿主机目录挂载
+
+#### -v D:/xxx/map:/usr/local/home/sqltie/map 地图文件 (.mbtiles .pak)
+
+#### -v D:/xxx/terrain:/usr/local/home/sqltie/terrain 地形文件 (.pak)
+
+#### -v D:/xxx/tileset:/usr/local/home/sqltie/tileset 模型文件 (.clt)
