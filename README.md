@@ -14,6 +14,14 @@
 3. 将下载输出的模型 .clt 文件存储于 sqltie/tileset
 4. 执行 CeisumOfflineServer 启动文件
 
+# windows
+
+https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Win-1.0.zip
+
+# linux
+
+https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Linux-1.0.zip
+
 # Docker:
 
 拉取镜像命令：
@@ -27,3 +35,5 @@ docker pull 15819588170/cesium-offline-server
 ```
 docker run --name cesium-offline-server  -p 3000:3000 -p 443:443 -v D:/xxx/map:/usr/local/home/sqltie/map -v D:/xxx/terrain:/usr/local/home/sqltie/terrain -v D:/xxx/tileset:/usr/local/home/sqltie/tileset -v D:/code/CeisumOfflineServer/tile:/usr/local/home/tile  -itd 15819588170/cesium-offline-server:latest
 ```
+
+docker run --name cesium-offline-server -p 3000:3000 -p 443:443 -itd 15819588170/cesium-offline-server:latest
