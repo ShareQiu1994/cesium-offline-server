@@ -14,13 +14,9 @@
 3. 将下载输出的模型 .clt 文件存储于 sqlite/tileset
 4. 执行 CeisumOfflineServer 启动文件
 
-# windows
+# windows & linux DownLoad
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Win-1.1.zip
-
-# linux
-
-https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Linux-1.1.zip
+https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.1
 
 # Docker:
 
