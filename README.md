@@ -1,4 +1,4 @@
-# cesium-offline-server V1.0
+# cesium-offline-server V1.1
 
 ● 主要功能
 
@@ -9,18 +9,18 @@
 
 ● 使用手册
 
-1. 将下载输出的地图 .mbtiles .pak 文件存储于 sqltie/map
-2. 将下载输出的地形 .pak 文件存储于 sqltie/terrain
-3. 将下载输出的模型 .clt 文件存储于 sqltie/tileset
+1. 将下载输出的地图 .mbtiles .pak 文件存储于 sqlite/map
+2. 将下载输出的地形 .pak 文件存储于 sqlite/terrain
+3. 将下载输出的模型 .clt 文件存储于 sqlite/tileset
 4. 执行 CeisumOfflineServer 启动文件
 
 # windows
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Win-1.0.zip
+https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Win-1.1.zip
 
 # linux
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Linux-1.0.zip
+https://github.com/ShareQiu1994/cesium-offline-server/releases/download/1.0/CeisumOfflineServer-Linux-1.1.zip
 
 # Docker:
 
@@ -33,7 +33,7 @@ docker pull 15819588170/cesium-offline-server
 启动容器命令:
 
 ```
-docker run --name cesium-offline-server  -p 3000:3000 -p 443:443 -v D:/xxx/map:/usr/local/home/sqltie/map -v D:/xxx/terrain:/usr/local/home/sqltie/terrain -v D:/xxx/tileset:/usr/local/home/sqltie/tileset -v D:/code/CeisumOfflineServer/tile:/usr/local/home/tile  -itd 15819588170/cesium-offline-server:latest
+docker run --name cesium-offline-server  -p 3000:3000 -p 443:443 -v D:/xxx/map:/usr/local/home/sqlite/map -v D:/xxx/terrain:/usr/local/home/sqlite/terrain -v D:/xxx/tileset:/usr/local/home/sqlite/tileset -v D:/xxx/tile:/usr/local/home/tile  -itd 15819588170/cesium-offline-server:latest
 ```
 
 ## docker 主要参数
@@ -46,8 +46,10 @@ docker run --name cesium-offline-server  -p 3000:3000 -p 443:443 -v D:/xxx/map:/
 
 ### 宿主机目录挂载
 
-#### -v D:/xxx/map:/usr/local/home/sqltie/map 地图文件 (.mbtiles .pak)
+#### -v D:/xxx/map:/usr/local/home/sqlite/map 地图文件 (.mbtiles .pak)
 
-#### -v D:/xxx/terrain:/usr/local/home/sqltie/terrain 地形文件 (.pak)
+#### -v D:/xxx/terrain:/usr/local/home/sqlite/terrain 地形文件 (.pak)
 
-#### -v D:/xxx/tileset:/usr/local/home/sqltie/tileset 模型文件 (.clt)
+#### -v D:/xxx/tileset:/usr/local/home/sqlite/tileset 模型文件 (.clt)
+
+#### -v D:/xxx/tile:/usr/local/home/tile 散列文件
