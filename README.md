@@ -49,7 +49,7 @@ docker pull 15819588170/cesium-offline-server
 启动容器命令:
 
 ```
-docker run --name cesium-offline-server  -p 80:80 -p 443:443 -v D:/xxx/map:/usr/local/home/sqlite/map -v D:/xxx/terrain:/usr/local/home/sqlite/terrain -v D:/xxx/tileset:/usr/local/home/sqlite/tileset -v D:/xxx/tile:/usr/local/home/tile -v D:/xxx/key:/usr/local/home/key -itd 15819588170/cesium-offline-server:latest
+docker run --name cesium-offline-server  -p 80:80 -p 443:443 -v D:/xxx/map:/usr/local/home/sqlite/map -v D:/xxx/terrain:/usr/local/home/sqlite/terrain -v D:/xxx/tileset:/usr/local/home/sqlite/tileset -v D:/xxx/tile:/usr/local/home/tile -v D:/xxx/key:/usr/local/home/key -v D:/xxx/config:/usr/local/home/config -v D:/xxx/model:/usr/local/home/model -itd 15819588170/cesium-offline-server:latest
 ```
 
 ## docker 主要参数
