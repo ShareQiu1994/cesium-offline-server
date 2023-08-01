@@ -40,8 +40,9 @@
 系统运行截图：
 ![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801175802.png)
 
-访问(http://127.0.0.1)系统发布的we页面查看代码示例：
-![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B.png)
+访问系统发布的 web 页面查看代码示例：
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801180410.png)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801180357.png)
 
 示例代码详情:
 ![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801175028.png)
