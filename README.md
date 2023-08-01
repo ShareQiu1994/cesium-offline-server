@@ -1,13 +1,13 @@
-# cesium-offline-server V1.3
+# cesium-offline-server V1.4
 
 ● 主要功能
 
 1. 发布地型服务 cesiumlab 输出的地形紧凑型文件 .pak
 2. 发布地图服务 爬虫下载的紧凑型文件 .mbtiles 以及 cesiumlab 输出的 .pak
 3. 发布模型服务 cesiumlab 输出的 3dtiles 紧凑型文件 .clt
-4. 发布的服务支持 jwt 鉴权 
+4. 发布的服务支持 jwt 鉴权
 5. 支持 http/https
-6. 支持 通过config配置文件配置系统参数
+6. 支持 通过 config 配置文件配置系统参数
 
 ● 使用手册
 
@@ -15,10 +15,11 @@
 2. 将下载输出的地形 .pak 文件存储于 sqlite/terrain
 3. 将下载输出的模型 .clt 文件存储于 sqlite/tileset
 4. 执行 CeisumOfflineServer 启动文件
+5. 访问 http://127.0.0.1 查看示例代码
 
-● config配置项
+● config 配置项
 
-``` javascript 
+```javascript
 {
   "http-port":80,  // http端口
   "https-port":443,  // https端口
@@ -28,15 +29,26 @@
   "jwt-username":"eulee",   // jwt登录帐号
   "jwt-password":"2023@password!.",  // jwt登录密码
   "jwt-secret-key":"liubf", // jwt密钥
-  "jwt-expires-in": "1h",   // jwt token过期时间 
+  "jwt-expires-in": "1h",   // jwt token过期时间
   "aes-key":"LBF_KEY_XU123456",  // model文件 aes 加密密钥
   "aes-iv":"LBF_KEY_XU789456"    // model文件 aes 加密密钥偏移量
 }
 ```
 
+# 系统截图
+
+系统运行截图：
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801175802.png)
+
+访问(http://127.0.0.1)系统发布的we页面查看代码示例：
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B.png)
+
+示例代码详情:
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801175028.png)
+
 # windows & linux DownLoad
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.3
+https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.4
 
 # Docker:
 
@@ -66,9 +78,9 @@ docker run --name cesium-offline-server  -p 80:80 -p 443:443 -v D:/xxx/map:/usr/
 
 #### -v D:/xxx/terrain:/usr/local/home/sqlite/terrain 地形文件 (.pak)
 
-#### -v D:/xxx/tileset:/usr/local/home/sqlite/tileset 3dtiles文件 (.clt)
+#### -v D:/xxx/tileset:/usr/local/home/sqlite/tileset 3dtiles 文件 (.clt)
 
-#### -v D:/xxx/key:/usr/local/home/sqlite/key ssl证书文件
+#### -v D:/xxx/key:/usr/local/home/sqlite/key ssl 证书文件
 
 #### -v D:/xxx/tile:/usr/local/home/tile 散列文件
 
