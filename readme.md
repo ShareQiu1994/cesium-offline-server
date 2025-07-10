@@ -59,4 +59,4 @@
 
 # windows & linux DownLoad
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.1.6
+https://gitee.com/liu-bofang/cesium-offline-server/releases/tag/1.1.6
