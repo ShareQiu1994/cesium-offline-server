@@ -2,7 +2,7 @@
 
 ● 主要功能
 
-1. 发布地图服务 cesiumlab 输出的紧凑型文件 .pak  以及标注的 .mbtiles .db <br/>
+1. 发布地图服务 cesiumlab 输出的紧凑型文件 .pak  以及标准的 .mbtiles .db <br/>
 (地图发布为标准的XYZ/TMS服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、Openlays、QGIS、ArcgisPro、GlobalMapper等使用)
 2. 发布地形服务 cesiumlab 输出的紧凑型文件 .pak <br/>
 (地形发布为标准的Cesium服务和MapBoxRGB服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL等使用)
