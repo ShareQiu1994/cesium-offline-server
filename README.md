@@ -65,3 +65,9 @@ https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.1.6
 通过网盘分享的文件：测试数据 香港(卫星地图/地形/城市白模)
 链接: https://pan.baidu.com/s/10TaQSc4DfbCqfMI6T75NPg?pwd=j2dn 提取码: j2dn 
 --来自百度网盘超级会员v6的分享
+
+# 更多数据 全球/全国  谷歌卫星/Arcgis卫星/天地图卫星/天地图地形/天地图矢量街道/地名路网/城市白模 定制服务
+
+请联系微信： liubf94 QQ：421419567 <br/>
+淘宝商城：https://shop330354166.taobao.com/index.htm?spm=2013.1.w5002-25038922603.2.7f9e3bf0lnzAs1
+
