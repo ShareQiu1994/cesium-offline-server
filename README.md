@@ -1,13 +1,13 @@
-# cesium-offline-server V1.4
+# cesium-offline-server V1.1.6
 
 ● 主要功能
 
-1. 发布地型服务 cesiumlab 输出的地形紧凑型文件 .pak
-2. 发布地图服务 爬虫下载的紧凑型文件 .mbtiles 以及 cesiumlab 输出的 .pak
-3. 发布模型服务 cesiumlab 输出的 3dtiles 紧凑型文件 .clt
-4. 发布的服务支持 jwt 鉴权
-5. 支持 http/https
-6. 支持 通过 config 配置文件配置系统参数
+1. 发布地图服务 cesiumlab 输出的紧凑型文件 .pak  以及标注的 .mbtiles .db (地图发布为标准的XYZ/TMS服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、Openlays、QGIS、ArcgisPro、GlobalMapper等使用)
+2. 发布地形服务 cesiumlab 输出的紧凑型文件 .pak  (地形发布为标准的Cesium服务和MapBoxRGB服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL等使用)
+4. 发布模型服务 cesiumlab 输出的紧凑型文件 .clt  (模型服务发布为标注的3dtiles服务,支持CesiumJS、Cesium For UE/Unity等使用  )
+5. 发布的服务支持 jwt 鉴权
+6. 支持 http/https
+7. 支持 通过 config 配置文件配置系统参数
 
 ● 使用手册
 
@@ -46,43 +46,15 @@
 
 示例代码详情:
 ![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230801175028.png)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7101.png)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7102.jpg)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7103.jpg)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7104.jpg)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7105.jpg)
+![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7106.jpg)
+
 
 # windows & linux DownLoad
 
-https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.4
+https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.1.6
 
-# Docker:
-
-拉取镜像命令：
-
-```
-docker pull 15819588170/cesium-offline-server
-```
-
-启动容器命令:
-
-```
-docker run --name cesium-offline-server  -p 80:80 -p 443:443 -v D:/xxx/map:/usr/local/home/sqlite/map -v D:/xxx/terrain:/usr/local/home/sqlite/terrain -v D:/xxx/tileset:/usr/local/home/sqlite/tileset -v D:/xxx/tile:/usr/local/home/tile -v D:/xxx/key:/usr/local/home/key -v D:/xxx/config:/usr/local/home/config -itd 15819588170/cesium-offline-server:latest
-```
-
-## docker 主要参数
-
-### 宿主机端口映射
-
-#### -p xxx:80 http 端口
-
-#### -p xxx:443 https 端口
-
-### 宿主机目录挂载
-
-#### -v D:/xxx/map:/usr/local/home/sqlite/map 地图文件 (.mbtiles .pak)
-
-#### -v D:/xxx/terrain:/usr/local/home/sqlite/terrain 地形文件 (.pak)
-
-#### -v D:/xxx/tileset:/usr/local/home/sqlite/tileset 3dtiles 文件 (.clt)
-
-#### -v D:/xxx/key:/usr/local/home/sqlite/key ssl 证书文件
-
-#### -v D:/xxx/tile:/usr/local/home/tile 散列文件
-
-#### -v D:/xxx/config:/usr/local/home/config 系统配置文件
