@@ -62,6 +62,6 @@ https://github.com/ShareQiu1994/cesium-offline-server/releases/tag/1.1.6
 
 # 测试数据下载地址
 
-通过网盘分享的文件：测试数据
+通过网盘分享的文件：测试数据 香港(地图/地形/白模)
 链接: https://pan.baidu.com/s/10TaQSc4DfbCqfMI6T75NPg?pwd=j2dn 提取码: j2dn 
 --来自百度网盘超级会员v6的分享
