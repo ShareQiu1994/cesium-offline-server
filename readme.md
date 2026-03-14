@@ -1,24 +1,34 @@
-# cesium-offline-server V1.1.6
+# cesium-offline-server V1.1.7
 
 ● 主要功能
 
-1. 发布地图服务 cesiumlab 输出的紧凑型文件 .pak  以及标准的 .mbtiles .db <br/>
-(地图发布为标准的XYZ/TMS服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、Openlays、QGIS、ArcgisPro、GlobalMapper等使用)
-2. 发布地形服务 cesiumlab 输出的紧凑型文件 .pak <br/>
-(地形发布为标准的Cesium服务和MapBoxRGB服务,支持CesiumJS、Cesium For UE/Unity、MapboxGL等使用)
-3. 发布模型服务 cesiumlab 输出的紧凑型文件 .clt <br/>
-(模型服务发布为标注的3dtiles服务,支持CesiumJS、Cesium For UE/Unity等使用  )
-4. 发布的服务支持 jwt 鉴权
-5. 支持 http/https
-6. 支持 通过 config 配置文件配置系统参数
+1. **地图服务**：发布 CesiumLab 等工具输出的 .pak，以及标准 .mbtiles、.rgbtiles 等 <br/>
+   - 存放目录：`sqlite/map/`；地图发布为标准 XYZ/TMS 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、OpenLayers、QGIS、ArcgisPro、GlobalMapper 等使用。
+2. **地形服务**：发布 .pak、.mbtiles 等地形数据 <br/>
+   - 存放目录：`sqlite/terrain/`；地形发布为标准 Cesium 服务和 MapBox RGB 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL 等使用。
+3. **三维模型（3D Tiles）服务**：发布 CesiumLab 输出的 .clt 紧凑型文件 <br/>
+   - 存放目录：`sqlite/tileset/`；发布为标准 3D Tiles 服务，支持 CesiumJS、Cesium For UE/Unity 等使用。
+4. **按目录组织的地图与地形（Eulee 结构）**：<br/>
+   - 地图：`sqlite/euleemap/`，每个子目录为一套地图服务，以目录名作为服务名；<br/>
+   - 地形：`sqlite/euleeterrain/`，每个子目录为一套地形服务，以目录名作为服务名。
+5. 发布的服务支持 **JWT 鉴权**。
+6. 支持 **HTTP/HTTPS**。
+7. 支持通过 **config** 配置文件配置系统参数。
+
+服务启动时会自动扫描上述目录，将符合格式的数据文件发布为可在 Cesium 中使用的瓦片或地形、模型服务；新增、删除或替换数据文件后需**重启服务**后才会在列表中生效。
 
 ● 使用手册
 
-1. 将下载输出的地图 .mbtiles .pak 文件存储于 sqlite/map
-2. 将下载输出的地形 .pak 文件存储于 sqlite/terrain
-3. 将下载输出的模型 .clt 文件存储于 sqlite/tileset
-4. 执行 CeisumOfflineServer 启动文件
-5. 访问 http://127.0.0.1 查看示例代码
+1. **放置数据**：将地图（.pak / .mbtiles / .rgbtiles）放入 `sqlite/map/`；地形（.pak / .mbtiles）放入 `sqlite/terrain/`；模型（.clt）放入 `sqlite/tileset/`；或按 Eulee 结构放入 `sqlite/euleemap/`、`sqlite/euleeterrain/` 对应子目录。
+2. **启动服务**：执行 CesiumOfflineServer 启动文件，服务会扫描目录并发布所有符合格式的数据。
+3. **访问预览**：浏览器访问 `http://127.0.0.1`（或本机 IP:端口），进入功能示例首页；首页左侧为“地图数据 / 地形数据 / 模型数据”树形列表，主区域为卡片，点击卡片可在新标签页打开对应的 Cesium 预览页（地图/地形/模型）。
+4. 首页支持**技术栈切换**、**关键字搜索**过滤数据，以及**获取更多数据源**说明弹窗。
+
+● 注意事项
+
+- 新增、删除或替换数据文件后，需要**重启服务**，新数据才会在首页列表和预览中生效。
+- 首页列表与侧栏由服务根据当前目录中的数据动态生成，无需手动配置。
+- 若某类目录下没有符合格式的文件，对应分类下将不显示任何项。
 
 ● config 配置项
 
@@ -26,6 +36,7 @@
 {
   "http-port":80,  // http端口
   "https-port":443,  // https端口
+  "open-browser": true, // 自动打开网页浏览器
   "ssl-key":"server.key",   // ssl key证书文件
   "ssl-crt":"server.crt",   // ssl crt证书文件
   "jwt-token":true,         // 是否启用jwt token认证
@@ -59,7 +70,7 @@
 
 #  CesiumOfflineServer下载地址 windows & linux
 
-https://gitee.com/liu-bofang/cesium-offline-server/releases/tag/1.1.6
+https://gitee.com/liu-bofang/cesium-offline-server/releases/tag/1.1.7
 
 # 测试数据下载地址
 
