@@ -1,28 +1,32 @@
-# cesium-offline-server V1.1.7
+# cesium-offline-server V1.1.8
 
 ● 主要功能
 
-1. **地图服务**：发布 CesiumLab 等工具输出的 .pak，以及标准 .mbtiles、.rgbtiles 等 <br/>
-   - 存放目录：`sqlite/map/`；地图发布为标准 XYZ/TMS 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、OpenLayers、QGIS、ArcgisPro、GlobalMapper 等使用。
-2. **地形服务**：发布 .pak、.mbtiles 等地形数据 <br/>
-   - 存放目录：`sqlite/terrain/`；地形发布为标准 Cesium 服务和 MapBox RGB 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL 等使用。
-3. **三维模型（3D Tiles）服务**：发布 CesiumLab 输出的 .clt 紧凑型文件 <br/>
-   - 存放目录：`sqlite/tileset/`；发布为标准 3D Tiles 服务，支持 CesiumJS、Cesium For UE/Unity 等使用。
+1. **地图服务**：发布 CesiumLab 等工具输出的 .pak，以及标准 .mbtiles、.rgbtiles，以及原始 XYZ 目录 <br/>
+   - 存放目录：`sqlite/map/`；地图发布为标准 XYZ/TMS 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL、Leaflet、OpenLayers、QGIS、ArcgisPro、GlobalMapper 等使用。<br/>
+   - **原始 XYZ 目录**：将 `{z}/{x}/{y}.png`（也支持 jpg / jpeg / webp）按层级放在子目录中，目录名即为服务名，例如 `sqlite/map/tdt_img/0/0/0.png`。
+2. **地形服务**：发布 .pak、.mbtiles，以及原始 Cesium terrain 目录 <br/>
+   - 存放目录：`sqlite/terrain/`；地形发布为标准 Cesium 服务和 MapBox RGB 服务，支持 CesiumJS、Cesium For UE/Unity、MapboxGL 等使用。<br/>
+   - **原始 terrain 目录**：标准 Cesium quantized-mesh 目录（含 `layer.json` 与 `{z}/{x}/{y}.terrain`），目录名即为服务名，例如 `sqlite/terrain/广东省/layer.json`。
+3. **三维模型（3D Tiles）服务**：发布 CesiumLab 输出的 .clt 紧凑型文件，以及原始 3D Tiles 目录 <br/>
+   - 存放目录：`sqlite/tileset/`；发布为标准 3D Tiles 服务，支持 CesiumJS、Cesium For UE/Unity 等使用。<br/>
+   - **原始 3D Tiles 目录**：标准 Cesium 3D Tiles（含 `tileset.json` 及 `.b3dm` / `.i3dm` / `.pnts` / `.glb` 等），目录名即为服务名。若根目录没有 `tileset.json`、子目录各自有一套 tileset，启动时会自动汇总发布。
 4. **按目录组织的地图与地形（Eulee 结构）**：<br/>
    - 地图：`sqlite/euleemap/`，每个子目录为一套地图服务，以目录名作为服务名；<br/>
    - 地形：`sqlite/euleeterrain/`，每个子目录为一套地形服务，以目录名作为服务名。
 5. 发布的服务支持 **JWT 鉴权**。
 6. 支持 **HTTP/HTTPS**。
 7. 支持通过 **config** 配置文件配置系统参数。
+8. 支持 **Windows**、**Linux x64**、**Linux-arm64（国产麒麟服务器）**。
 
 服务启动时会自动扫描上述目录，将符合格式的数据文件发布为可在 Cesium 中使用的瓦片或地形、模型服务；新增、删除或替换数据文件后需**重启服务**后才会在列表中生效。
 
 ● 使用手册
 
-1. **放置数据**：将地图（.pak / .mbtiles / .rgbtiles）放入 `sqlite/map/`；地形（.pak / .mbtiles）放入 `sqlite/terrain/`；模型（.clt）放入 `sqlite/tileset/`；或按 Eulee 结构放入 `sqlite/euleemap/`、`sqlite/euleeterrain/` 对应子目录。
+1. **放置数据**：将地图（.pak / .mbtiles / .rgbtiles / XYZ 原始目录）放入 `sqlite/map/`；地形（.pak / .mbtiles / 原始 terrain 目录）放入 `sqlite/terrain/`；模型（.clt / 原始 3D Tiles 目录）放入 `sqlite/tileset/`；或按 Eulee 结构放入 `sqlite/euleemap/`、`sqlite/euleeterrain/` 对应子目录。
 2. **启动服务**：执行 CesiumOfflineServer 启动文件，服务会扫描目录并发布所有符合格式的数据。
 3. **访问预览**：浏览器访问 `http://127.0.0.1`（或本机 IP:端口），进入功能示例首页；首页左侧为“地图数据 / 地形数据 / 模型数据”树形列表，主区域为卡片，点击卡片可在新标签页打开对应的 Cesium 预览页（地图/地形/模型）。
-4. 首页支持**技术栈切换**、**关键字搜索**过滤数据，以及**获取更多数据源**说明弹窗。
+4. 首页支持**关键字搜索**过滤数据，以及**获取更多数据源**说明弹窗。
 
 ● 注意事项
 
@@ -68,9 +72,9 @@
 ![图片](https://devmodels.oss-cn-shenzhen.aliyuncs.com/devtest/liubofang/images/7106.jpg)
 
 
-#  CesiumOfflineServer下载地址 windows & linux
+#  CesiumOfflineServer下载地址 Windows / Linux x64 / Linux-arm64（国产麒麟）
 
-https://gitee.com/liu-bofang/cesium-offline-server/releases/tag/1.1.7
+https://gitee.com/liu-bofang/cesium-offline-server/releases/tag/1.1.8
 
 # 测试数据下载地址
 
